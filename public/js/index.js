@@ -2,11 +2,6 @@ var socket = io();
 
 socket.on('connect', function() {
     console.log('Connected to server');
-
-    socket.emit('createMessage', {
-        from: 'jane@example.com',
-        text: 'Hi John'
-    });
 });
 
 socket.on('disconnect', function() {
@@ -14,5 +9,5 @@ socket.on('disconnect', function() {
 });
 
 socket.on('newMessage', function(message){
-    console.log('Got new message', message);
+    console.log('New message', message);
 });
